@@ -1,0 +1,17 @@
+# 私密配置
+config/wechat-publisher.yaml
+.env
+
+# 生成输出
+output/
+*.html
+!templates/*.html
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# 系统
+.DS_Store
+Thumbs.db
