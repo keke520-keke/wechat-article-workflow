@@ -1,0 +1,31 @@
+# wechat-publisher 统一配置
+default: main
+
+accounts:
+  main:
+    name: "我的公众号"                    # 公众号名称
+    app_id: "wx________________"          # ← 填入你的 AppID
+    app_secret: "________________"        # ← 填入你的 AppSecret
+    author: "作者名"                      # 文章作者署名
+    theme: "sage-premium"                 # 排版主题（16套可选）
+    image_style: "hand-drawn-blue"        # 配图风格
+    newspic_image_style: "infographic-warm" # 封面图风格
+
+# 图片生成配置
+image_generation:
+  generator: "gemini-web"                 # 使用 Gemini Web 生图
+  gemini_model: "gemini-2.0-flash"       # 生图模型
+
+# 草稿箱管理
+draft_management:
+  max_drafts: 20                          # 草稿箱上限（微信限制100）
+  auto_clean: true                        # 超限时自动删除最旧的
+  keep_min: 5                             # 至少保留最近N篇
+
+# 定时发布（可选）
+schedule:
+  daily_at: "07:00"                       # 每日发布时间（北京时间）
+  topics:                                 # 选题池（轮换使用）
+    - "养生健康"
+    - "中年家庭情感"
+    - "生活实用技巧"
